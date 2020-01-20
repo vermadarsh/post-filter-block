@@ -24,6 +24,9 @@ const {
     RadioControl
 } = wp.components;
 
+/**
+ * Register block type (Posts Filter)
+ */
 registerBlockType("postfilter/posts-filter", {
     title: "Posts Filter",
     icon: "image-filter",

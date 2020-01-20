@@ -13,6 +13,7 @@
  */
 function pfb_post_filter_admin_js_css() {
 
+	wp_enqueue_style( 'theme-prefix-post-filter-block-css',  plugin_dir_url( __FILE__ ). '/css/theme-prefix-post-filter-block.css' , array(), wp_get_theme()->get( 'Version' ) );
 	wp_enqueue_script( 'theme-prefix-post-filter-block-js', plugin_dir_url( __FILE__ ) . '/js/block.build.js', array(
 		'wp-blocks',
 		'wp-i18n',
@@ -169,7 +170,7 @@ function pfb_post_filter_callback( $attributes ) {
 		<?php
 	} else { ?>
         <div class="news-post">
-            No post Found..!
+            <?php esc_html_e( 'No post found..!', 'post-filter-block' ); ?>
         </div>
 		<?php
 	}
